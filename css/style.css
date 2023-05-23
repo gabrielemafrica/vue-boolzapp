@@ -1,0 +1,226 @@
+/* generale */
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+
+/* container generale*/
+
+#app{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* container messaggi */
+
+.container{
+    width: 70%;
+    height: 90%;
+    border: 1px solid black;
+    display: flex;
+    background-color: rgb(234, 234, 234);
+}
+body{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+/* container contatti */
+.container-cnt{
+    width: 40%;
+    height: 100%;
+    border-right: 1px solid rgb(228, 228, 228);
+}
+
+/* container messaggi*/
+.container-msg{
+    width: 60%;
+    height: 100%;
+}
+
+/* header */
+
+.header-cnt, .header-msg{
+    height: 80px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+    .profile{
+        display: flex;
+        align-items: center;
+    }
+
+    .profile-icon{
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        margin-right: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .profile-icon img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 50%;
+    }
+
+    .access{
+        font-size: 10px;
+        color: gray;
+        font-weight: lighter;
+    }
+
+    ul{
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        color: rgb(177, 177, 177);
+        font-size: 20px;
+    }
+
+    /* contatti contanuto */
+.content-cnt{
+    height: calc(100% - 110px);
+}
+
+    .contacts{
+        width: 100%;
+        overflow-y: hidden;
+        height: calc(100% - 80px);
+        background-color: #fff;
+    }
+
+    /* ricevi notifiche */
+    .ricevi-notifiche{
+        background-color: rgb(159, 216, 248);
+        display: flex;
+        align-items: center;
+        height: 60px;
+        padding: 10px 20px;
+        gap: 5px;
+    }
+
+    .ricevi-notifiche .campanella{
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .campanella .fa-bell-slash{
+        color: rgb(159, 216, 248);
+    }
+
+    .ricevi-notifiche .txt div:first-child{
+        font-size: 14px;
+    }
+
+    .ricevi-notifiche .txt div:last-child{
+        font-size: 12px;
+        text-decoration: underline;
+        color: gray;
+    }
+
+    /* search bar */
+    .search-bar{
+        padding: 5px 10px;
+        position: relative;
+        height: 50px;
+
+    }
+    .search-bar i{
+        position: absolute;
+        top: 50%;
+        left: 7%;
+        transform: translate(-50%, -50%);
+        font-size: 12px;
+        color: rgb(181, 188, 197);
+    }
+    .search-bar .search{
+        width: 100%;
+        height: 40px;
+        border: none;
+        border-radius: 5px;
+        padding-left: 60px;
+
+    }
+        /* scheda contatto*/
+        .scheda{
+            border-bottom: 1px solid rgb(177, 177, 177);
+            padding: 10px 15px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .scheda .profile{
+            align-items: start;
+        }
+
+    /* main message */
+        .content-msg{
+            width: 100%;
+            height: calc(100% - 140px);
+            background-image: url(../img/sfondo-chat.jpg);
+            background-size: contain;
+            overflow: hidden;
+            padding: 30px 50px;
+            display: flex;
+            flex-direction: column;
+
+        }
+        /* area messaggi */
+        .content-msg .messaggio{
+            min-width: 200px;
+            min-height: 30px;
+            padding: 5px 10px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            display: inline;
+        }
+
+        .messaggio.inviato{
+            background-color: rgb(220, 248, 192);
+        }
+        .messaggio.ricevuto{
+            background-color: rgb(255, 255, 255);
+        }
+
+
+    /* footer */
+        footer.footer-msg{
+            width: 100%;
+            height: 60px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        footer.footer-msg i{
+            color: rgb(107, 120, 143);
+        }
+        footer.footer-msg .whrite-msg{
+            height: 70%;
+            width: 80%;
+            border-radius: 5px;
+            border: none;
+            padding: 20px;
+        }

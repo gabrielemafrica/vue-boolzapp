@@ -75,11 +75,7 @@
                     <div class="contacts">
 
                         <!-- scheda contatto -->
-                        <div id="scheda"
-
-                        :class="activeContact === index ? 'active' : ''" :class="contacts[index].visible ? '' : 'off'" 
-
-                        v-for="(contact, index) in contacts" @click="activateContact(index)">
+                        <div id="scheda" :class="{'active': activeContact === index ? 'active' : '', 'off': contacts[index].visible ? '' : 'off'}" v-for="(contact, index) in contacts" @click="activateContact(index)">
 
                             <!-- profile -->
                             <div class="profile">

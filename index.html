@@ -68,14 +68,18 @@
                     <!-- search bar -->
                     <div class="search-bar">
                         <i class="fa-solid fa-magnifying-glass"></i>
-                        <input type="text" class="search" placeholder="Cerca o inizia una nuova chat">
+                        <input type="text"  v-model="ricerca" v-on:keyup="cercanome" class="search" placeholder="Cerca o inizia una nuova chat">
                     </div>
 
                     <!-- blocco contatti -->
                     <div class="contacts">
 
                         <!-- scheda contatto -->
-                        <div :class="activeContact === index ? 'scheda active' : 'scheda'" v-for="(contact, index) in contacts" @click="activateContact(index)">
+                        <div id="scheda"
+
+                        :class="activeContact === index ? 'active' : ''" :class="contacts[index].visible ? '' : 'off'" 
+
+                        v-for="(contact, index) in contacts" @click="activateContact(index)">
 
                             <!-- profile -->
                             <div class="profile">
@@ -135,7 +139,7 @@
                 </header>
 
                 <!-- messaggi -->
-                <main class="content-msg">
+                <main id="content-msg">
                     <div class="container-messaggio" v-for="(message, index) in contacts[activeContact].messages">
                         <div :class="message.status === 'sent' ? 'messaggio inviato' : 'messaggio ricevuto'">
                             <span class="testo-msg">

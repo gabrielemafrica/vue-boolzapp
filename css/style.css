@@ -174,7 +174,7 @@ body{
 
     }
         /* scheda contatto*/
-        .scheda{
+        #scheda{
             border-bottom: 1px solid rgb(177, 177, 177);
             padding: 10px 15px;
             display: flex;
@@ -182,20 +182,23 @@ body{
             cursor: pointer;
         }
 
-        .scheda .profile{
+        #scheda .profile{
             align-items: start;
         }
 
-        .scheda:hover{
+        #scheda:hover{
             background-color: rgb(228, 228, 228);
         }
 
-        .scheda.active{
+        #scheda.active{
             background-color: rgb(181, 188, 197);
+        }
+        #scheda.off{
+            display: none;
         }
 
     /* main message */
-        .content-msg{
+        #content-msg{
             width: 100%;
             height: calc(100% - 140px);
             background-image: url(../img/sfondo-chat.jpg);
@@ -213,7 +216,7 @@ body{
             width: 80%;
             margin: 0 auto 10px auto;
         }
-        .content-msg .messaggio{
+        #content-msg .messaggio{
             min-width: 200px;
             max-width: 60%;
             min-height: 30px;

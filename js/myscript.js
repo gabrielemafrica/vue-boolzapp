@@ -5,7 +5,19 @@ createApp({
         return {
             activeContact: 0,
             newMessage: '',
-            newResponse: 'ok',
+            newResponse: [
+                'ma che dici?!',
+                'certo che no!',
+                'ti amo anche io',
+                'si, si, come no',
+                'Piuttosto mi ammazzo!',
+                'ma veramente?!',
+                'uffa',
+                'lo sai che puzzi?',
+                'sei proprio un cretino.',
+                'si, ma prima dimmi dove vai.'
+            ],
+            ricerca: '',
             mioProfilo: {
                 name: 'Gabriele',
                 avatar: 'img/mia-foto.jpeg',
@@ -180,33 +192,51 @@ createApp({
         activateContact(index) {
             this.activeContact = index;
         },
-        addMessage() {
+        creaMessage(sentOrRecived, messaggio){
             const now = new Date();
-            const h = now.getHours();
-            const m = now.getMinutes();
-            const oraMsg = h + ':' + m;
+            let h = this.addZero(now.getHours());
+            let m = this.addZero(now.getMinutes());
+            let oraMsg = h + ':' + m;
             const objMessage = {
                 date: oraMsg,
-                message: this.newMessage,
-                status:'sent'
+                message: messaggio,
+                status: sentOrRecived
             };
             this.contacts[this.activeContact].messages.push(objMessage);
             this.newMessage = '';
-            setTimeout(this.autoResponse, 1000);
         },
-        autoResponse(){
-            const now = new Date();
-            const h = now.getHours();
-            const m = now.getMinutes();
-            const oraMsg = h + ':' + m;
-            const objMessage = {
-                date: oraMsg,
-                message: this.newResponse,
-                status:'received'
-            };
-            this.contacts[this.activeContact].messages.push(objMessage);
-        }
+        addZero(i) {
+            if (i < 10) {
+                i = '0' + i;
+            }
+            return i;
+        },
+        addMessage() {
+            this.creaMessage('sent', this.newMessage);
+            setTimeout(() => {
+                const numero = this.generaNumero();
+                this.creaMessage('recived', this.newResponse[numero]);
+                console.log(numero, this.newResponse);
+            }, 1000);
+        },
+        generaNumero(){
+            let numero = Math.floor(Math.random() * 10);
+            return numero;
+        },
+        cercanome(){
+            let ricerca = this.ricerca.toLowerCase();
+            this.contacts.forEach(element => {
+                element.visible = element.name.toLowerCase().includes(ricerca);
 
+                // if(element.name.toLowerCase().includes(ricerca)){
+                //     element.visible = true;
+                // }else{
+                //     element.visible = false;
+                // }
+
+                console.log(element);
+            })
+        } 
     }
 }).mount("#app");
 

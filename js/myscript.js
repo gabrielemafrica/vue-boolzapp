@@ -4,6 +4,8 @@ createApp({
     data() {
         return {
             activeContact: 0,
+            newMessage: '',
+            newResponse: 'ok',
             mioProfilo: {
                 name: 'Gabriele',
                 avatar: 'img/mia-foto.jpeg',
@@ -177,6 +179,32 @@ createApp({
     methods: {
         activateContact(index) {
             this.activeContact = index;
+        },
+        addMessage() {
+            const now = new Date();
+            const h = now.getHours();
+            const m = now.getMinutes();
+            const oraMsg = h + ':' + m;
+            const objMessage = {
+                date: oraMsg,
+                message: this.newMessage,
+                status:'sent'
+            };
+            this.contacts[this.activeContact].messages.push(objMessage);
+            this.newMessage = '';
+            setTimeout(this.autoResponse, 1000);
+        },
+        autoResponse(){
+            const now = new Date();
+            const h = now.getHours();
+            const m = now.getMinutes();
+            const oraMsg = h + ':' + m;
+            const objMessage = {
+                date: oraMsg,
+                message: this.newResponse,
+                status:'received'
+            };
+            this.contacts[this.activeContact].messages.push(objMessage);
         }
 
     }

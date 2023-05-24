@@ -75,17 +75,17 @@
                     <div class="contacts">
 
                         <!-- scheda contatto -->
-                        <div class="scheda"  v-for="(contact, index) in contacts">
+                        <div :class="activeContact === index ? 'scheda active' : 'scheda'" v-for="(contact, index) in contacts" @click="activateContact(index)">
 
                             <!-- profile -->
                             <div class="profile">
                                 <!-- icon -->
                                 <div class="profile-icon">
-                                    <img :src="contacts[index].avatar" :alt="contacts[index].name">
+                                    <img :src="contact.avatar" :alt="contact.name">
                                 </div>
                                 <!-- name -->
                                 <div class="profile-name">
-                                    <span>{{contacts[index].name}}</span>
+                                    <span>{{contact.name}}</span>
                                     <div class="access">Ultimo accesso</div>
                                 </div>      
                             </div>
@@ -100,17 +100,17 @@
             <!-- msg side -->
             <section class="container-msg">
 
-                <!-- header -->
+                <!-- header messaggi-->
                 <header class="header-msg">
                     <!-- profile -->
                     <div class="profile">
                         <!-- icon -->
                         <div class="profile-icon">
-                            <img src="img/Herbert-Ballerina.jpg" alt="">
+                            <img :src="contacts[activeContact].avatar" :alt="contacts[activeContact].name">
                         </div>
                         <!-- name -->
                         <div class="profile-name">
-                            <span>Nome</span>
+                            <span>{{contacts[activeContact].name}}</span>
                             <div class="access">Ultimo accesso</div>
                         </div>      
                     </div> 
@@ -133,24 +133,16 @@
                     </nav>
 
                 </header>
+
+                <!-- messaggi -->
                 <main class="content-msg">
-                    <div class="container-messaggio">
-                        <div class="messaggio inviato">
+                    <div class="container-messaggio" v-for="(message, index) in contacts[activeContact].messages">
+                        <div :class="message.status === 'sent' ? 'messaggio inviato' : 'messaggio ricevuto'">
                             <span class="testo-msg">
-                                ciao
+                                {{message.message}}
                             </span>
                             <span class="ora-msg">
-                                12:00
-                            </span>
-                        </div>
-                    </div>
-                    <div class="container-messaggio">
-                        <div class="messaggio ricevuto">
-                            <span class="testo-msg">
-                                ok
-                            </span>
-                            <span class="ora-msg">
-                                12:00
+                                {{message.date}}
                             </span>
                         </div>
                     </div>

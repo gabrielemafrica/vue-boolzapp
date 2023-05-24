@@ -179,10 +179,19 @@ body{
             padding: 10px 15px;
             display: flex;
             justify-content: space-between;
+            cursor: pointer;
         }
 
         .scheda .profile{
             align-items: start;
+        }
+
+        .scheda:hover{
+            background-color: rgb(228, 228, 228);
+        }
+
+        .scheda.active{
+            background-color: rgb(181, 188, 197);
         }
 
     /* main message */

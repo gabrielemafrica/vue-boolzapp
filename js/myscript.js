@@ -3,7 +3,7 @@ const { createApp } = Vue;
 createApp({
     data() {
         return {
-            message: 'Hello Vue!',
+            activeContact: 0,
             mioProfilo: {
                 name: 'Gabriele',
                 avatar: 'img/mia-foto.jpeg',
@@ -175,6 +175,10 @@ createApp({
         }
     },
     methods: {
+        activateContact(index) {
+            this.activeContact = index;
+        }
 
     }
 }).mount("#app");
+

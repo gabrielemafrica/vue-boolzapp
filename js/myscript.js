@@ -4,10 +4,15 @@ createApp({
     data() {
         return {
             message: 'Hello Vue!',
+            mioProfilo: {
+                name: 'Gabriele',
+                avatar: 'img/mia-foto.jpeg',
+                visible: true
+            },
             contacts: [
                 {
                     name: 'Ciccio e Franco',
-                    avatar: './img/Franco-Ciccio.jpg',
+                    avatar: 'img/Franco-Ciccio.jpg',
                     visible: true,
                     messages: [
                         {
@@ -29,7 +34,7 @@ createApp({
                 },
                 {
                     name: 'Herbert Ballerina',
-                    avatar: './img/Herbert-Ballerina.jpg',
+                    avatar: 'img/Herbert-Ballerina.jpg',
                     visible: true,
                     messages: [
                         {
@@ -51,7 +56,7 @@ createApp({
                 },
                 {
                     name: 'Pippo Franco',
-                    avatar: './img/Pippo-Franco.jpeg',
+                    avatar: 'img/Pippo-Franco.jpeg',
                     visible: true,
                     messages: [
                         {
@@ -73,7 +78,7 @@ createApp({
                 },
                 {
                     name: 'Pippo Baudo',
-                    avatar: './img/Pippo-Baudo.jpg',
+                    avatar: 'img/Pippo-Baudo.jpg',
                     visible: true,
                     messages: [
                         {
@@ -90,7 +95,7 @@ createApp({
                 },
                 {
                     name: 'Iva Zanicchi',
-                    avatar: './img/Iva-Zanicchi.jpg',
+                    avatar: 'img/Iva-Zanicchi.jpg',
                     visible: true,
                     messages: [
                         {
@@ -107,7 +112,7 @@ createApp({
                 },
                 {
                     name: 'Maccio Capatonda',
-                    avatar: './img/Maccio-Capatonda.jpg',
+                    avatar: 'img/Maccio-Capatonda.jpg',
                     visible: true,
                     messages: [
                         {
@@ -129,7 +134,7 @@ createApp({
                 },
                 {
                     name: 'Paperon De Paperoni',
-                    avatar: './img/Paperon-DePaperoni.jpeg',
+                    avatar: 'img/Paperon-DePaperoni.jpeg',
                     visible: true,
                     messages: [
                         {
@@ -146,7 +151,7 @@ createApp({
                 },
                 {
                     name: 'Mariangela Fantozzi',
-                    avatar: './img/Mariangela-Fantozzi.jpg',
+                    avatar: 'img/Mariangela-Fantozzi.jpg',
                     visible: true,
                     messages: [
                         {

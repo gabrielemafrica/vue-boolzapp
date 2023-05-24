@@ -24,11 +24,11 @@
                     <div class="profile">
                         <!-- icon -->
                         <div class="profile-icon">
-                            <img src="img/Franco-Ciccio.jpg" alt="">
+                            <img :src="mioProfilo.avatar" :alt="mioProfilo.name">
                         </div>
                         <!-- name -->
                         <div class="profile-name">
-                            <span>Nome</span>
+                            <span>{{mioProfilo.name}}</span>
                         </div>      
                     </div>
 
@@ -54,7 +54,7 @@
                 <!-- content contatti -->
                 <main class="content-cnt">
 
-                    <!-- message notifiche -->
+                    <!-- avviso notifiche -->
                     <div class="ricevi-notifiche">
                         <div class="campanella">
                             <i class="fa-solid fa-bell-slash"></i>
@@ -75,17 +75,17 @@
                     <div class="contacts">
 
                         <!-- scheda contatto -->
-                        <div class="scheda">
+                        <div class="scheda"  v-for="(contact, index) in contacts">
 
                             <!-- profile -->
                             <div class="profile">
                                 <!-- icon -->
                                 <div class="profile-icon">
-                                    <img src="img/Iva-Zanicchi.jpg" alt="">
+                                    <img :src="contacts[index].avatar" :alt="contacts[index].name">
                                 </div>
                                 <!-- name -->
                                 <div class="profile-name">
-                                    <span>Nome</span>
+                                    <span>{{contacts[index].name}}</span>
                                     <div class="access">Ultimo accesso</div>
                                 </div>      
                             </div>
